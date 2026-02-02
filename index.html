@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #b30059;
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 22px;
+      color: #800040;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 30px;
+      margin: 20px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background: #ff3366;
+      color: white;
+    }
+
+    .yes:hover {
+      transform: scale(1.1);
+    }
+
+    .no {
+      background: white;
+      color: #ff3366;
+      border: 2px solid #ff3366;
+      position: absolute;
+    }
+
+    .heart {
+      position: fixed;
+      color: red;
+      font-size: 20px;
+      animation: float 4s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% { bottom: 0; opacity: 1; }
+      100% { bottom: 100%; opacity: 0; }
+    }
+
+    /* Stylish name animation */
+    .name {
+      font-size: 28px;
+      color: #ff0066;
+      font-weight: bold;
+      margin-top: 10px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hey Pooju❤️</h1>
+  <p>tumhari aankhe sabse jyada attract karti h🌟<br>
+     Aur ek sawal hai jo dil se poochna chahta hoon…</p>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <button class="yes" onclick="yes()">YES 💕</button>
+  <button class="no" id="no">NO 🙈</button>
+
+  <div class="name">Pooju ❤️</div>
+
+  <audio autoplay loop>
+    <source src="love.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function yes() {
+      alert("Yayyy! Tumne haa karke Mera din bana diya yr love you 🌹❤️");
+    }
+
+    const noBtn = document.getElementById("no");
+    noBtn.addEventListener("mouseover", () => {
+      noBtn.style.left = Math.random() * 80 + "vw";
+      noBtn.style.top = Math.random() * 80 + "vh";
+    });
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random()*30 + 20) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>
